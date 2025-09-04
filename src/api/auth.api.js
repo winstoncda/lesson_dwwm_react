@@ -15,3 +15,19 @@ export async function signUp(values) {
     console.log(error);
   }
 }
+
+export async function signIn(values) {
+  try {
+    const response = await fetch(`${BASE_URL}/user/login`, {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    const userConnected = await response.json();
+    return userConnected;
+  } catch (error) {
+    console.log(error);
+  }
+}
