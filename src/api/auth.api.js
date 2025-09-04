@@ -5,7 +5,7 @@ const BASE_URL = import.meta.env.VITE_SERVER_URL;
 
 export async function signUp(values) {
   try {
-    const response = await fetch(`${BASE_URL}/user`, {
+    const response = await fetch(`${BASE_URL}user`, {
       method: "POST",
       body: JSON.stringify(values),
       headers: {
@@ -21,7 +21,7 @@ export async function signUp(values) {
 
 export async function signIn(values) {
   try {
-    const response = await fetch(`${BASE_URL}/user/login`, {
+    const response = await fetch(`${BASE_URL}user/login`, {
       method: "POST",
       body: JSON.stringify(values),
       headers: {
@@ -38,7 +38,7 @@ export async function signIn(values) {
 
 export async function getCurrentUser() {
   try {
-    const response = await fetch(`${BASE_URL}/user/current`, {
+    const response = await fetch(`${BASE_URL}user/current`, {
       method: "GET",
       credentials: "include",
     });
@@ -53,7 +53,7 @@ export async function getCurrentUser() {
 }
 
 export async function signout() {
-  await fetch(`${BASE_URL}/user/deleteToken`, {
+  await fetch(`${BASE_URL}user/deleteToken`, {
     method: "DELETE",
     credentials: "include",
   });
